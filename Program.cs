@@ -22,7 +22,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UsestoreClosed(); // שימוש במידלוור לבדיקת מצב החנות
 app.UseAuthorization();
 
 app.MapControllers();
