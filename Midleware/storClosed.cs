@@ -24,13 +24,13 @@ namespace core.Midleware
 
             await _next(context);
         }
-        
-public static partial class MiddlewareExtensions
-{
-    public static IApplicationBuilder UsestorClosed(this IApplicationBuilder builder)
-        => builder.UseMiddleware<storClosedMiddleware>();
-}
+    }
 
+    // מחלקה עליונה (לא מקוננת) — אחרת אי אפשר להגדיר בה extension method
+    public static partial class MiddlewareExtensions
+    {
+        public static IApplicationBuilder UsestoreClosed(this IApplicationBuilder builder)
+            => builder.UseMiddleware<storClosedMiddleware>();
     }
 }
 

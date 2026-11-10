@@ -1,4 +1,5 @@
 using core.Interfaces;
+using core.Midleware;
 using core.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +22,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseErrorHandling(); // מידלוור ראשון — תופס חריגות מכל המידלוורים והקונטרולרים שאחריו
 app.UseHttpsRedirection();
 app.UsestoreClosed(); // שימוש במידלוור לבדיקת מצב החנות
 app.UseAuthorization();
